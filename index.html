@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>유와이소프트 | 공공데이터 파이프라인 · 모바일 앱</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="유와이소프트는 공공데이터를 수집·정제·검증해 바로 쓸 수 있는 데이터셋으로 만듭니다. 요양기관 DB, 사업자 정보 DB, 캠핑온·오늘의 감사 앱을 운영합니다." />
+<meta name="description" content="유와이소프트는 공공데이터를 수집·정제·검증해 바로 쓸 수 있는 데이터셋으로 만듭니다. 요양기관 DB, 사업자 정보 DB, Android 앱 2종과 토스 미니앱 5종을 운영합니다." />
 <link rel="canonical" href="https://uysoft983.kr/" />
 
 <meta property="og:type" content="website" />
@@ -98,7 +98,7 @@ a{color:inherit}
 @media(max-width:640px){.topnav{display:none}}
 
 /* ── hero ──────────────────────────────────────────── */
-.hero{padding:clamp(56px,10vw,104px) 0 clamp(40px,6vw,64px)}
+.hero{padding-top:clamp(56px,10vw,104px);padding-bottom:clamp(40px,6vw,64px)}
 .hero h1{
   margin:0 0 24px;
   font-size:clamp(30px,5.4vw,52px);
@@ -163,7 +163,7 @@ a{color:inherit}
 .hero-spec{margin-top:clamp(36px,5vw,52px);max-width:620px}
 
 /* ── sections ──────────────────────────────────────── */
-.section{padding:clamp(48px,7vw,84px) 0;border-top:1px solid var(--rule)}
+.section{padding-top:clamp(48px,7vw,84px);padding-bottom:clamp(48px,7vw,84px);border-top:1px solid var(--rule)}
 .section-intro{max-width:56ch;margin:0 0 32px;color:var(--ink-mute);font-weight:300}
 .section h2.title{
   margin:0 0 12px;
@@ -173,6 +173,9 @@ a{color:inherit}
 }
 
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+/* 카드가 많은 섹션은 최대 2열 — 다른 섹션의 카드 폭과 맞춘다 */
+.grid--duo{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:688px){.grid--duo{grid-template-columns:1fr}}
 
 .spec--link{transition:border-color .18s ease, transform .18s ease}
 .spec--link:hover{border-color:var(--accent);transform:translateY(-2px)}
@@ -201,6 +204,17 @@ a{color:inherit}
 .btn--accent{border-color:var(--accent-deep);color:var(--accent-deep)}
 .btn--accent:hover{background:var(--accent-deep);color:var(--card)}
 .btn .arrow{font-family:var(--mono);font-size:12px}
+
+/* ── mini apps ─────────────────────────────────────── */
+.spec-head--app{align-items:center;justify-content:flex-start}
+.spec-head--app .tag{margin-left:auto;align-self:flex-start;padding-top:3px}
+.app-icon{
+  width:44px;height:44px;flex:none;display:block;
+  border-radius:24%;
+  box-shadow:0 0 0 1px rgba(14,35,64,.08);
+}
+.app-title{min-width:0}
+.app-sub{margin:1px 0 0;font-size:12.5px;line-height:1.45;color:var(--ink-mute)}
 
 /* ── work list ─────────────────────────────────────── */
 .worklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
@@ -278,6 +292,7 @@ a{color:inherit}
     <nav class="topnav" aria-label="주요 메뉴">
       <a href="#data">데이터</a>
       <a href="#apps">앱</a>
+      <a href="#miniapps">미니앱</a>
       <a href="#work">작업</a>
       <a href="#contact">문의</a>
     </nav>
@@ -291,7 +306,7 @@ a{color:inherit}
     <h1 class="rise">공공데이터를 <em>바로 쓸 수 있는</em> 형태로 만듭니다</h1>
     <p class="hero-lede rise">
       여러 기관에 흩어진 공개 API와 배포 파일을 수집·정제·검증해 하나의 데이터셋으로 묶습니다.
-      같은 파이프라인 위에서 모바일 앱도 만들어 운영합니다.
+      같은 파이프라인 위에서 모바일 앱과 토스 미니앱도 만들어 운영합니다.
     </p>
 
     <div class="hero-spec rise">
@@ -398,9 +413,123 @@ a{color:inherit}
     </div>
   </section>
 
+  <!-- ── 토스 미니앱 ────────────────────────────────── -->
+  <!-- ▼ 외부 광고 가이드(앱인토스 개발자센터) 기준: '토스 미니앱'·'토스에서 [서비스명] 사용하기' 표현만 쓰고,
+       토스 로고·배지는 넣지 않았습니다. 버튼 주소는 토스가 만들어 준 공유 링크(minion.toss.im)입니다. -->
+  <section class="wrap section" id="miniapps">
+    <p class="eyebrow"><span class="num">03</span> 토스 미니앱</p>
+    <h2 class="title">토스에서 바로 쓰는 미니앱</h2>
+    <p class="section-intro">
+      유와이소프트가 직접 만들고 운영하는 토스 미니앱입니다. 설치 없이 토스 앱 안에서 바로 쓸 수 있습니다.
+      휴대폰에서 버튼을 누르면 토스 앱에서 열리고, 토스 앱에서 서비스 이름을 검색해도 찾을 수 있습니다.
+    </p>
+
+    <div class="grid grid--duo">
+
+      <article class="spec spec--link">
+        <div class="spec-head spec-head--app">
+          <img class="app-icon" src="assets/miniapps/campingon.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="app-title">
+            <h3>캠핑온</h3>
+            <p class="app-sub">전국 캠핑장 맞춤 검색</p>
+          </div>
+          <span class="tag">Toss Mini App</span>
+        </div>
+        <dl>
+          <div class="spec-row"><dt>수록</dt><dd>전국 캠핑장 3,000여 곳</dd></div>
+          <div class="spec-row"><dt>데이터</dt><dd>한국관광공사 고캠핑 공공데이터, 매일 갱신</dd></div>
+          <div class="spec-row"><dt>기능</dt><dd>지역·시설 유형·반려동물 동반·부대시설 조건 검색, 내 주변 캠핑장, 지도로 찾기, 캠핑장 날씨</dd></div>
+        </dl>
+        <a class="btn" href="https://minion.toss.im/HxYv2gIe">
+          토스에서 캠핑온 사용하기 <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <article class="spec spec--link">
+        <div class="spec-head spec-head--app">
+          <img class="app-icon" src="assets/miniapps/ipyangmap.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="app-title">
+            <h3>입양맵</h3>
+            <p class="app-sub">보호소 유기동물을 지역별로 찾아요</p>
+          </div>
+          <span class="tag">Toss Mini App</span>
+        </div>
+        <dl>
+          <div class="spec-row"><dt>데이터</dt><dd>국가동물보호정보시스템 공고, 하루 2번 갱신</dd></div>
+          <div class="spec-row"><dt>기능</dt><dd>시·군·구·동물 종류·성별·중성화 필터, 공고 종료가 가까운 순 정렬, 관심 동물, 보호소 전화, 내 주변 보호소</dd></div>
+          <div class="spec-row"><dt>참고</dt><dd>공고 정보는 실제와 다를 수 있어, 방문 전에 보호소에 확인해 주세요.</dd></div>
+        </dl>
+        <a class="btn" href="https://minion.toss.im/3svWfDn4">
+          토스에서 입양맵 사용하기 <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <article class="spec spec--link">
+        <div class="spec-head spec-head--app">
+          <img class="app-icon" src="assets/miniapps/eggcode.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="app-title">
+            <h3>난각번호 조회</h3>
+            <p class="app-sub">계란 껍데기 번호의 뜻을 풀어 드려요</p>
+          </div>
+          <span class="tag">Toss Mini App</span>
+        </div>
+        <dl>
+          <div class="spec-row"><dt>입력</dt><dd>계란 껍데기의 난각번호 10자리</dd></div>
+          <div class="spec-row"><dt>데이터</dt><dd>축산물이력제, 축산물품질평가원, 가축사육업 인허가 정보(행정안전부)</dd></div>
+          <div class="spec-row"><dt>기능</dt><dd>산란일·생산자 고유번호·사육환경번호 풀이, 공공데이터 기록과 출처 표시, 번호 읽는 법</dd></div>
+          <div class="spec-row"><dt>참고</dt><dd>공공데이터의 값을 고치지 않고 보여 주며, 계란의 안전이나 신선함을 판정하지 않습니다.</dd></div>
+        </dl>
+        <a class="btn" href="https://minion.toss.im/ZrD1Cipl">
+          토스에서 난각번호 조회 사용하기 <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <article class="spec spec--link">
+        <div class="spec-head spec-head--app">
+          <img class="app-icon" src="assets/miniapps/homequote.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="app-title">
+            <h3>우리집 도배 견적</h3>
+            <p class="app-sub">도배 비용 계산부터 견적서 작성까지</p>
+          </div>
+          <span class="tag">Toss Mini App</span>
+        </div>
+        <dl>
+          <div class="spec-row"><dt>기능</dt><dd>집 크기와 벽지 종류로 자재 수량·자재비 계산, 방 치수를 넣으면 벽과 천장을 나눠 벽지 롤 수 계산</dd></div>
+          <div class="spec-row"><dt>시공자용</dt><dd>항목별로 금액을 고쳐 견적서 작성, PDF로 만들기</dd></div>
+          <div class="spec-row"><dt>근거</dt><dd>금액마다 단가의 출처와 기준일 표시</dd></div>
+          <div class="spec-row"><dt>참고</dt><dd>입력한 조건으로 계산한 참고 금액이며, 실제 비용은 현장을 본 뒤 업체마다 다릅니다.</dd></div>
+        </dl>
+        <a class="btn" href="https://minion.toss.im/RBrHGgFe">
+          토스에서 우리집 도배 견적 사용하기 <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <article class="spec spec--link">
+        <div class="spec-head spec-head--app">
+          <img class="app-icon" src="assets/miniapps/happystamp.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="app-title">
+            <h3>행복 도장</h3>
+            <p class="app-sub">무지출 행복을 10초 만에 감정해요</p>
+          </div>
+          <span class="tag">Toss Mini App</span>
+        </div>
+        <dl>
+          <div class="spec-row"><dt>분류</dt><dd>기록 · 습관</dd></div>
+          <div class="spec-row"><dt>기능</dt><dd>돈 쓰지 않고 얻은 행복한 순간 기록, 감정가를 매긴 감정서, 행복 장부, 연속 기록과 칭호</dd></div>
+          <div class="spec-row"><dt>저장</dt><dd>기록은 이 기기의 토스 저장소에만 저장</dd></div>
+          <div class="spec-row"><dt>참고</dt><dd>감정가는 기록을 위한 가상의 수치이며, 현금·토스포인트·상품으로 바뀌지 않습니다.</dd></div>
+        </dl>
+        <a class="btn" href="https://minion.toss.im/BEMcjLbc">
+          토스에서 행복 도장 사용하기 <span class="arrow">→</span>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
   <!-- ── 그 외 작업 ─────────────────────────────────── -->
   <section class="wrap section" id="work">
-    <p class="eyebrow"><span class="num">03</span> 그 외 작업</p>
+    <p class="eyebrow"><span class="num">04</span> 그 외 작업</p>
     <h2 class="title">진행 중인 작업</h2>
 
     <ul class="worklist">
@@ -437,7 +566,7 @@ a{color:inherit}
 
   <!-- ── 문의 ───────────────────────────────────────── -->
   <section class="wrap section" id="contact">
-    <p class="eyebrow"><span class="num">04</span> 문의</p>
+    <p class="eyebrow"><span class="num">05</span> 문의</p>
     <div class="contact-box">
       <h2 class="title">데이터셋 제작이나 협업 제안</h2>
       <p class="section-intro">
